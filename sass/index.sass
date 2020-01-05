@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap")
+
+$main-font: "Montserrat", sans-serif
+
+/**
+ * Reusable code
+ */
+.container
+  background-color: #FFF
+  padding: 1em
+.text
+  text-align: center
+  font-size: 1rem
+  text-decoration: none
+  line-height: 2em
+.white
+  color: #fff
+.bold
+  font-weight: bold
+  
+
+*
+  margin: 0
+
+html
+  height: 100%
+  width: 100%
+body
+  font-family: $main-font
+
+#home
+  cursor: pointer
+
+.hero-bg
+  display: block
+  width: 100%
+  text-align: center
+  padding-bottom: 4em
+  background: #307d99 url("https://coursetro.s3.amazonaws.com/tutorial_images/bg.jpg")
+  background-size: cover
+
+.top
+  animation: fadeIn 1s forwards 
+
+.header
+  margin: 0 auto
+  padding: 1em 0
+          
+h1
+  font-size: 2.1rem
+  margin: 2em 0 1.2em
+  span
+    display: block
+    position: relative
+    text-transform: uppercase
+    font-size: 1.4rem
+    z-index: 1
+    &::before
+      z-index: -1
+      content: " "
+      position: absolute
+      width: 3em
+      background: #00BFFF
+      height: .4em
+      bottom: 0
+      margin-left: -.3em
+
+.form
+  label
+    display: block
+    font-weight: bold
+    color: #2D7D98
+    font-size: 1.2em
+
+  input
+    padding: .6em
+    width: 100%
+    font-size: 1.1rem
+    box-sizing: border-box
+    border: 1px solid #aaa
+    border-radius: .5em
+    margin: 2em 0 .5em
+
+
+  .sub
+    color: gray
+    font-size: .9rem
+    margin-bottom: 1em
+  
+  .submit
+    cursor: pointer
+    padding: 1em 0
+    width: 100%
+    font-size: 1.3rem
+    border: none
+    border-radius: .5em
+    background-color: #f89104
+    &:hover
+      background-color: rgb(216, 126, 1)
+    
+
+h2
+  margin-bottom: 1.2em
+  text-align: center
+  text-transform: uppercase
+  position: relative
+  z-index: 1
+  &::before
+    content: " "
+    position: absolute
+    width: 8em
+    background: #00bfff
+    height: 0.4em
+    bottom: 0
+    z-index: -1
+    margin-left: -0.3em
+.image
+  background-image: url("https://source.unsplash.com/D-vDQMTfAAU")
+  background-position: center
+  background-size: cover
+  width: 100%
+  min-height: 300px
+  img
+    display: none
+
+footer
+  background: #307d99
+  min-height: 150px
+  padding: 1px
+  ul
+    padding-top: 1em
+    list-style: none
+    display: flex
+    flex-direction: column
+    padding-bottom: 1em
+    li
+      padding: .5em
+  span
+    margin-top: 10px
+    margin-bottom: 20px
+    display: block
+    text-align: center
+    .icon
+      color: #fff
+      margin: 0
+
+@media (orientation: portrait )
+  .hero-bg
+    background-position: 0 0
+  .top
+    margin: 0 2em
+    .form.container
+      margin: 2em -2em 0
+      padding: 2em
+
+@media ( min-width: 800px )
+  .hero-bg
+    background-position: 0 30%
+    text-align: left
+  .text
+    text-align: left
+  .top
+    margin: 0 9em
+    width: 60%
+
+  h2
+    text-align: left
+  .form
+    margin: 2em 0
+    padding: 2em
+    border-radius: .5em
+    box-shadow: 0 0 10px #333
+  #form
+    display: flex
+    justify-content: center
+    align-items: center
+    .left
+      flex: 2.4     
+    .submit
+      padding: .65em 0
+      height: fit-content
+      font-size: 1.1rem
+      margin-top: 1em
+      margin-left: 1em
+      flex: 1
+    
+  .authentic 
+    padding: 0
+    background: #fff
+    position: relative
+    height: 500px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-areas: "bowl content"
+    .content
+      padding: 2.5em
+      grid-area: content
+    .image
+      grid-area: bowl
+
+  footer
+    ul
+      margin-top: 2em 
+      padding-left: 0
+      flex-direction: row
+      text-align: center
+      li
+        flex: 1
+
+@keyframes fadeIn
+  from
+    opacity: 0
+    transform: translateY(-4em)
+    
+  to
+    opacity: 1
+    transform: translateY(0)
+
+
+
+.overlay 
+  position: absolute
+  height: 100vh
+  width: 100%
+  background: rgba(0,0,0,.9)
+  z-index: 1
+  place-content: center
+  color: white
+  display: none
+  opacity: 0
+  
+.animate-overlay
+  animation: overlay 2s forwards
+
+@keyframes overlay 
+  0%
+    opacity: 0
+  30%
+    opacity: 1
+  70%
+    opacity: 1
+  100%
+    opacity: 0
